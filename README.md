@@ -10,10 +10,13 @@ This sample application :
 * Decodes the stream with python-opus & saves wav file on the server
 
 Installation:
+
 pip install -r requirements.txt
 
 Start web server:
+
 python server.py
 
 In browser:
-http://<server-ip>:8888
+
+http://\<server-ip\>:8888
