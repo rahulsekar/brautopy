@@ -5,6 +5,7 @@ import tornado.web
 import tornado.websocket
 import wave
 import uuid
+import gc
 from opus.decoder import Decoder as OpusDecoder
 
 class OpusDecoderWS( tornado.websocket.WebSocketHandler ):
@@ -46,6 +47,11 @@ class OpusDecoderWS( tornado.websocket.WebSocketHandler ):
             if self.is_encoded :
                 pcm = self.decoder.decode( data, self.frame_size, False )
                 self.wave_write.writeframes( pcm )
+
+                # force garbage collector
+                # default rate of cleaning is not sufficient
+                gc.collect()
+
             else :
                 self.wave_write.writeframes( data )
 
