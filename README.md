@@ -9,14 +9,24 @@ This sample application :
 * Sends the stream to a python websocket server (tornado)
 * Decodes the stream with python-opus & saves wav file on the server
 
-Installation:
+**Installation**
 
+Python3.6 recommended.
+
+```
 pip install -r requirements.txt
-
-Start web server:
-
 python server.py
+```
 
-In browser:
+In browser open: http://localhost:8888
 
-http://\<server-ip\>:8888
+On OSX & Windows, libopus have to be installed separately.
+
+OSX:
+```
+brew install opus
+```
+Windows:
+
+Download the opusfile windows zip (not the source) from here: https://www.opus-codec.org/downloads/
+Copy the libopus-0.dll into PATH or brautopy directory.
