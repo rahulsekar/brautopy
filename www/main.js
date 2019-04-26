@@ -27,6 +27,7 @@ function startRecord()
 {
     document.getElementById( "record").innerHTML = "Stop";
     document.getElementById( "encode" ).disabled = true;
+    mh.context.resume(); // needs an await?
     sendSettings();
     isRecording = true;
     console.log( 'started recording' );
